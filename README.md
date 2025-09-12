@@ -45,7 +45,20 @@ The project emphasizes:
 - **Linting & Formatting:** ESLint, Prettier (optional)  
 
 ---
+## Setup & Installation
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/land237.git
+   cd land237
 
+2. Install dependencies
+   ```bash
+   npm install
+
+3.Running the Project
+    ```bash
+      npm run dev
+------
 ## Project Structure
 
 ```bash
