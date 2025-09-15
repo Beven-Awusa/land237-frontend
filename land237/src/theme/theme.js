@@ -14,9 +14,9 @@ export const lightTheme = createTheme({
 export const darkTheme = createTheme({
 	palette: {
 		mode: "dark",
-		primary: { main: "#26a69a" },
+		primary: { main: "#00695c" },
 		secondary: { main: "#ff9800" },
-		background: { default: "#121212", paper: "#1e1e1e" },
+		background: { default: "#202020FF", paper: "#1e1e1e" },
 	},
 	typography: { fontFamily: "Roboto, Arial, sans-serif" },
 });
