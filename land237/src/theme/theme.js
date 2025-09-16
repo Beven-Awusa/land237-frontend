@@ -6,7 +6,7 @@ export const lightTheme = createTheme({
 		mode: "light",
 		primary: { main: "#00695c" },  // teal
 		secondary: { main: "#f57c00" }, // warm accent
-		background: { default: "#fafafa", paper: "#fff" },
+		background: { default: "#fafafa", paper: "#ffffff" },
 	},
 	typography: { fontFamily: "Roboto, Arial, sans-serif" },
 });

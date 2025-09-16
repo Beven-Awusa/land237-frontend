@@ -20,7 +20,13 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-background shadow-md relative z-50">
+    <nav
+      className={`shadow-md z-50 sticky top-0 backdrop-blur-lg ${
+        mode === "light"
+          ? "bg-white bg-opacity-90"
+          : "bg-[#002912e1] bg-opacity-90"
+      } transition-all duration-300 ease-in-out`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -61,13 +67,12 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-background shadow-lg transform transition-transform duration-300 ease-in-out z-50
-        ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+        className={`fixed top-0 left-0 h-screen w-64 backdrop-blur-lg bg-[#002912e1] shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="flex justify-between items-center p-4 border-b border-gray-200">
-          <span className="text-xl font-bold text-primary">Menu</span>
+          <span className="text-xl font-bold text-white">Menu</span>
           <IconButton onClick={() => setIsOpen(false)}>
-            <CloseIcon />
+            <CloseIcon sx={{color: 'white'}} />
           </IconButton>
         </div>
 
@@ -76,30 +81,21 @@ export default function Navbar() {
             <Link
               key={link.name}
               to={link.link}
-              className="text-text hover:text-primary transition-colors"
+              className="text-white hover:text-primary transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {link.name}
             </Link>
           ))}
 
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={toggleTheme} // independent
-          >
-            {mode === "light" ? "Dark Mode" : "Light Mode"}
-          </Button>
+          <IconButton onClick={toggleTheme} sx={{color: 'white', marginRight: 'auto'}}>
+            {mode === "light" ? <Brightness4Icon /> : <WbSunnyIcon />}
+          </IconButton>
         </div>
       </div>
 
       {/* Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-40"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
+     
     </nav>
   );
 }
